@@ -61,20 +61,12 @@ public class CoffeeMachine {
             return;
         }
         sc.nextLine();
-        CoffeeTypes selectedCoffee;
-        switch (coffeeType) {
-            case 1:
-                selectedCoffee = CoffeeTypes.ESPRESSO;
-                break;
-            case 2:
-                selectedCoffee = CoffeeTypes.LATTE;
-                break;
-            case 3:
-                selectedCoffee = CoffeeTypes.CAPPUCCINO;
-                break;
-            default:
-                selectedCoffee = null;
-        }
+        CoffeeTypes selectedCoffee = switch (coffeeType) {
+            case 1 -> CoffeeTypes.ESPRESSO;
+            case 2 -> CoffeeTypes.LATTE;
+            case 3 -> CoffeeTypes.CAPPUCCINO;
+            default -> null;
+        };
 
         if (selectedCoffee != null) {
             if (checkSupplies(selectedCoffee)) {
@@ -125,7 +117,7 @@ public class CoffeeMachine {
     protected static void takeMoney() {
         System.out.printf("I gave you $%.0f \n",currentMoney);
         currentMoney = 0;
-        return;
+
     }
     protected static void printCurrentInventory() {
         System.out.println("\nThe coffee machine has:");
@@ -134,7 +126,7 @@ public class CoffeeMachine {
         System.out.println(currentCoffeeBeans + " g of coffee beans");
         System.out.println(currentNumDispCups + " disposable cups");
         System.out.printf("$%.0f of money\n", currentMoney);
-        return;
+
     }
 
 }
