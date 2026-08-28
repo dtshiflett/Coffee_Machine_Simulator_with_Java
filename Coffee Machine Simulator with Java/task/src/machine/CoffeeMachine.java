@@ -158,11 +158,3 @@ enum CoffeeTypes {
 }
 
 
-class Coffee {
-    // per 1 cup coffee
-    public final static int waterPerCup = 200; // ml
-    public final static int milkPerCup = 50; // ml
-    public final static int coffeeBeansPerCup = 15; // g
-    public final static int dispCupsNeeded = 1;
-}
-
